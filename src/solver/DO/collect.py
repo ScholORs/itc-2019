@@ -3,6 +3,7 @@ import argparse
 import concurrent.futures
 import csv
 import datetime as dt
+import errno
 import hashlib
 import json
 import os
@@ -13,7 +14,9 @@ import struct
 import subprocess
 import sys
 import threading
+import tempfile
 import time
+import traceback
 import xml.etree.ElementTree as ET
 import zipfile
 
@@ -28,10 +31,28 @@ def timestamp():
     return dt.datetime.now().astimezone().isoformat()
 
 
+def retry_file_operation(operation):
+    """Allow transient Windows sharing/antivirus locks to clear; never retry forever."""
+    for attempt in range(12):
+        try:
+            return operation()
+        except OSError as error:
+            transient = getattr(error, "winerror", None) in (5, 32, 33) or error.errno == errno.EBUSY
+            if not transient or attempt == 11:
+                raise
+            time.sleep(min(0.025 * 2**attempt, 0.5))
+
+
 def write_json(path, data):
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    os.replace(tmp, path)
+    fd, name = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=path.parent)
+    tmp = Path(name)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as stream:
+            stream.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+        retry_file_operation(lambda: os.replace(tmp, path))
+    finally:
+        if tmp.exists():
+            retry_file_operation(lambda: tmp.unlink(missing_ok=True))
 
 
 def sha(path):
@@ -119,10 +140,14 @@ class Bridge:
         self.controller = controller
         self.stderr = (stage / "java_stderr.log").open("w", encoding="utf-8")
         options = {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == "nt" else {"start_new_session": True}
-        self.process = subprocess.Popen(["java", "-Dfile.encoding=UTF-8", f"-Xmx{config['heap_mb']}m", "-XX:ActiveProcessorCount=1",
-            "-cp", str(HERE / "build"), "solver.DO.SearchBridge", config["instance"],
-            str(stage / "improvements.csv"), "improvements"], stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE, stderr=self.stderr, text=True, encoding="utf-8", **options)
+        try:
+            self.process = subprocess.Popen(["java", "-Dfile.encoding=UTF-8", f"-Xmx{config['heap_mb']}m", "-XX:ActiveProcessorCount=1",
+                "-cp", str(HERE / "build"), "solver.DO.SearchBridge", str(stage / "instance.xml"),
+                str(stage / "improvements.csv"), "improvements"], stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE, stderr=self.stderr, text=True, encoding="utf-8", **options)
+        except Exception:
+            self.stderr.close()
+            raise
         controller.register(self.process)
         if self.process.stdout.readline().strip() != f"READY\t{config['blocks']}":
             self.close()
@@ -198,9 +223,12 @@ def run_seed(seed, controller, config, schema):
     started = timestamp()
     bridge = None
     committed = False
+    failure = None
     try:
         if controller.stopped():
             raise Cancelled()
+        # The parent read the batch snapshot once. No JVM opens the shared source XML.
+        (stage / "instance.xml").write_bytes(config["_instance_bytes"])
         bridge = Bridge(stage, controller, config)
         df, nfe, choices = state(bridge.send("RANDOM", seed))
         initial_df = df
@@ -218,16 +246,19 @@ def run_seed(seed, controller, config, schema):
         verify_encoding(final, choices, schema)
         bridge.close()
         bridge = None
+        retry_file_operation(lambda: (stage / "instance.xml").unlink())
         summary = dict(seed=seed, initial_df=initial_df, final_df=df, nfe=nfe,
             elapsed_seconds=elapsed, started=started, finished=timestamp(),
             stop_reason="feasible" if df == 0 else "time_budget", choices=choices,
             xml_sha256=sha(final), verified=True, checkpoints=checkpoints)
         write_json(stage / "summary.json", summary)
         with controller.lock:
-            if controller.stopped():
-                raise Cancelled()
             # The rename is the commit boundary: pending directories are never training data.
-            os.replace(stage, controller.output / "completed" / stage.name)
+            def commit():
+                if controller.stopped():
+                    raise Cancelled()
+                os.replace(stage, controller.output / "completed" / stage.name)
+            retry_file_operation(commit)
             committed = True
         print(f"DONE seed={seed} DF={df} NFE={nfe} seconds={elapsed:.3f}", flush=True)
         return summary
@@ -236,16 +267,24 @@ def run_seed(seed, controller, config, schema):
     except Exception as error:
         if controller.event.is_set():
             return None
-        write_json(controller.output / "errors" / f"seed_{seed}.json", dict(seed=seed, error=repr(error), time=timestamp()))
-        if (stage / "java_stderr.log").exists():
-            shutil.copy2(stage / "java_stderr.log", controller.output / "errors" / f"seed_{seed}.log")
+        failure = dict(seed=seed, error=repr(error), time=timestamp(),
+                       winerror=getattr(error, "winerror", None), filename=getattr(error, "filename", None),
+                       traceback=traceback.format_exc())
         print(f"ERROR seed={seed}: {error}", flush=True)
         return None
     finally:
-        if bridge is not None:
-            bridge.close()
-        if not committed and stage.exists():
-            shutil.rmtree(stage)
+        try:
+            if bridge is not None:
+                bridge.close()
+        finally:
+            # Read diagnostic logs only after their JVM writer has exited.
+            if failure is not None:
+                write_json(controller.output / "errors" / f"seed_{seed}.json", failure)
+                if (stage / "java_stderr.log").exists():
+                    retry_file_operation(lambda: shutil.copy2(stage / "java_stderr.log",
+                        controller.output / "errors" / f"seed_{seed}.log"))
+            if not committed and stage.exists():
+                retry_file_operation(lambda: shutil.rmtree(stage))
 
 
 def npy_header(stream, dtype, shape):
@@ -386,6 +425,7 @@ def main():
             log="initial and strict DF improvements only; all candidates count toward NFE",
             timer="Java monotonic clock, starts before random initialization; excludes parsing/JVM startup",
             near_fraction=args.near_fraction, instance_sha256=sha(INSTANCE),
+            instance_access="parent reads batch snapshot once; each JVM parses a private per-seed copy",
             schema_sha256=sha(output / "encoding_schema.json"),
             versions={x: java_version(x) for x in ["java", "javac"]},
             python_version=sys.version)
@@ -406,6 +446,7 @@ def main():
         (output / "compile.log").write_text(compile_result.stdout + compile_result.stderr, encoding="utf-8")
         compile_result.check_returncode()
         controller = Controller(output, started + args.hours * 3600)
+        config["_instance_bytes"] = (output / "instance.xml").read_bytes()
         def handle_stop(signum, frame):
             # Keep the handler short; the polling main loop terminates registered JVMs.
             controller.reason = "manual_keyboard_stop"
@@ -433,8 +474,15 @@ def main():
                     break
                 done, _ = concurrent.futures.wait(pending, timeout=0.25, return_when=concurrent.futures.FIRST_COMPLETED)
                 for future in done:
-                    pending.pop(future)
-                    finished += int(future.result() is not None)
+                    seed = pending.pop(future)
+                    try:
+                        finished += int(future.result() is not None)
+                    except Exception as error:
+                        # A failed task/cleanup must not crash every other independent JVM.
+                        write_json(output / "errors" / f"seed_{seed}_cleanup.json", dict(seed=seed,
+                            error=repr(error), traceback=traceback.format_exc(), time=timestamp(),
+                            winerror=getattr(error, "winerror", None), filename=getattr(error, "filename", None)))
+                        print(f"TASK FAILED seed={seed}: {error}; other tasks continue.", flush=True)
                     write_json(output / "progress.json", dict(completed_runs=finished, launched_runs=attempted,
                         target_runs=args.runs, active_tasks=len(pending), elapsed_wall_seconds=time.monotonic() - started,
                         updated=timestamp()))
@@ -452,8 +500,8 @@ def main():
         for sig, handler in old_handlers.items():
             signal.signal(sig, handler)
         if ACTIVE.exists() and json.loads(ACTIVE.read_text(encoding="utf-8"))["pid"] == os.getpid():
-            ACTIVE.unlink()
-        lock.unlink(missing_ok=True)
+            retry_file_operation(lambda: ACTIVE.unlink(missing_ok=True))
+        retry_file_operation(lambda: lock.unlink(missing_ok=True))
 
 
 if __name__ == "__main__":

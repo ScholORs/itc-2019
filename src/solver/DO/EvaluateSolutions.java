@@ -14,7 +14,10 @@ public class EvaluateSolutions {
     public static Timetable load(ProblemInstance instance, String path) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-        Document document = factory.newDocumentBuilder().parse(path);
+        Document document;
+        try (var input = Files.newInputStream(Path.of(path))) {
+            document = factory.newDocumentBuilder().parse(input);
+        }
         Map<Integer, Element> assignments = new HashMap<>();
         NodeList nodes = document.getElementsByTagName("class");
         for (int j = 0; j < nodes.getLength(); j++) {
@@ -52,7 +55,10 @@ public class EvaluateSolutions {
             try {
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-                Document document = factory.newDocumentBuilder().parse(parts[1]);
+                Document document;
+                try (var input = Files.newInputStream(Path.of(parts[1]))) {
+                    document = factory.newDocumentBuilder().parse(input);
+                }
                 Map<Integer, Element> assignments = new HashMap<>();
                 NodeList nodes = document.getElementsByTagName("class");
                 for (int j = 0; j < nodes.getLength(); j++) {

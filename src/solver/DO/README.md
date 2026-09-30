@@ -42,6 +42,8 @@ py -3 collect.py --export-only "D:\your-project\itc-2019\src\solution\muni-fsps-
 
 每个 seed 从随机 timetable 开始，仅优化 DF。随机选择一个 class，再随机替换 time 或 room，候选 DF 不高于当前 DF 即接受。无 restart，无 NFE 上限，DF=0 提前结束。每个 seed 仅保存一个终点 XML，不因 DF 较高而排除。
 
+主程序读取本批实例快照一次，每个任务在自己的 `.pending/seed_.../instance.xml` 使用独立副本，避免多个 JVM 打开同一个实例路径。该副本在 JVM 退出后删除，不进入训练集。XML 写入/核验均显式关闭文件流；日志只在 JVM 退出后复制。JSON 更新、目录提交与清理对 Windows 临时文件占用做有限重试，任务失败不再导致整批任务一起退出；错误中记录 WinError、文件路径和完整 traceback。
+
 时间由 Java `System.nanoTime` 从随机初始化前计起，包含通信和记录，不含 JVM 启动和实例读取；候选评价不能中途打断，所以会略超 120 秒。30、60、90、120 秒仅记录 DF/NFE/实际时间，不保存中间 XML。初始解计 1 NFE，每个 HC 候选（包括没有改变的候选）都计 1 NFE。
 
 每轮 `improvements.csv` 仅记录初始解和严格 DF 下降事件，避免几千轮逐评价日志占用大量磁盘。完整 NFE 和时间 checkpoint 写入 summary。并发资源竞争会影响 NFE，不宜将并发吞吐量与过去单任务运行直接比较。

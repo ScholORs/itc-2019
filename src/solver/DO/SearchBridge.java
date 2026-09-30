@@ -113,7 +113,9 @@ public class SearchBridge {
         }
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.transform(new DOMSource(document), new StreamResult(new File(path)));
+        try (OutputStream output = Files.newOutputStream(Path.of(path))) {
+            transformer.transform(new DOMSource(document), new StreamResult(output));
+        }
     }
     private String command(String line) throws Exception {
         String[] fields = line.split("\t", -1);
