@@ -1,0 +1,21 @@
+{
+  "completed_runs": 2500,
+  "retained_samples": 2500,
+  "excluded_samples": 0,
+  "final_df_distribution": {
+    "1": 12,
+    "2": 1985,
+    "3": 360,
+    "4": 118,
+    "5": 23,
+    "6": 2
+  },
+  "total_nfe": 649904585,
+  "finished": "2026-10-01T09:44:22.278703+08:00",
+  "launched_runs": 2500,
+  "discarded_or_failed_runs": 0,
+  "discarded_or_failed_seeds": [],
+  "stop_reason": "target_runs_completed",
+  "elapsed_wall_seconds": 25254.687000000034,
+  "pending_directories_remaining": 0
+}

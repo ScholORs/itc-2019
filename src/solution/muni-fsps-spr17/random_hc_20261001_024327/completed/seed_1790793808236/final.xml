@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<solution name="muni-fsps-spr17" technique="Ordinary HC data collection (DF only)">
+    <class days="1000000" id="1" room="39" start="126" weeks="1111111101001000000"/>
+    <class days="1000000" id="2" room="39" start="136" weeks="1111111101001000000"/>
+    <class days="0100000" id="3" room="39" start="148" weeks="1010101010101000000"/>
+    <class days="0010000" id="4" room="7" start="182" weeks="1111111111000000000"/>
+    <class days="1000000" id="5" room="7" start="210" weeks="1111111101001000000"/>
+    <class days="1000000" id="6" start="93" weeks="1111111101001000000"/>
+    <class days="0100000" id="7" start="147" weeks="1111111111111000000"/>
+    <class days="0001000" id="8" start="93" weeks="1111111111111000000"/>
+    <class days="0100000" id="9" start="93" weeks="1111111111111000000"/>
+    <class days="0010000" id="10" start="93" weeks="1111111111111000000"/>
+    <class days="0000100" id="11" start="93" weeks="1111111011111000000"/>
+    <class days="0100000" id="12" room="39" start="126" weeks="1010101010101000000"/>
+    <class days="0010000" id="13" room="33" start="186" weeks="1111111111111000000"/>
+    <class days="0001000" id="14" room="38" start="132" weeks="1111111111000000000"/>
+    <class days="1000000" id="15" room="26" start="180" weeks="0101010101000000000"/>
+    <class days="0001000" id="16" room="37" start="96" weeks="1111111111000000000"/>
+    <class days="1000000" id="17" room="7" start="228" weeks="1111111101000000000"/>
+    <class days="1000000" id="18" start="96" weeks="1111111101000000000"/>
+    <class days="1000000" id="19" start="96" weeks="1111111101000000000"/>
+    <class days="1000000" id="20" start="96" weeks="1111111101000000000"/>
+    <class days="0010000" id="21" start="96" weeks="1111111111000000000"/>
+    <class days="0010000" id="22" start="96" weeks="1111111111000000000"/>
+    <class days="0010000" id="23" start="96" weeks="1111111111000000000"/>
+    <class days="0010000" id="24" room="7" start="196" weeks="1111111111000000000"/>
+    <class days="0100000" id="25" room="33" start="226" weeks="1111111111111000000"/>
+    <class days="1000000" id="26" room="33" start="126" weeks="1010101000001000000"/>
+    <class days="0001000" id="27" room="33" start="216" weeks="1111111111111000000"/>
+    <class days="0010000" id="28" room="35" start="226" weeks="1111111111111000000"/>
+    <class days="0010000" id="29" room="8" start="156" weeks="1111111111111000000"/>
+    <class days="0001000" id="30" room="8" start="126" weeks="1111111111111000000"/>
+    <class days="0001000" id="31" room="9" start="196" weeks="1111111111111000000"/>
+    <class days="1000000" id="32" room="9" start="86" weeks="1111111101001000000"/>
+    <class days="1000000" id="33" room="9" start="136" weeks="0101010101000000000"/>
+    <class days="1000000" id="34" room="9" start="96" weeks="1111111101001000000"/>
+    <class days="1000000" id="35" room="9" start="106" weeks="1111111101001000000"/>
+    <class days="0001000" id="36" room="35" start="206" weeks="1111111111111000000"/>
+    <class days="0001000" id="37" room="35" start="216" weeks="1111111111111000000"/>
+    <class days="0001000" id="38" room="39" start="138" weeks="1111111111111000000"/>
+    <class days="0001000" id="39" room="9" start="156" weeks="1010101010101000000"/>
+    <class days="0001000" id="40" room="34" start="114" weeks="1111111111111000000"/>
+    <class days="0001000" id="41" room="16" start="114" weeks="1111111111111000000"/>
+    <class days="1000000" id="42" room="38" start="126" weeks="1111111101001000000"/>
+    <class days="1000000" id="43" room="38" start="166" weeks="1111111101001000000"/>
+    <class days="0100000" id="44" room="41" start="126" weeks="1010101010101000000"/>
+    <class days="0010000" id="45" room="37" start="156" weeks="1111111111111000000"/>
+    <class days="0001000" id="46" room="9" start="156" weeks="0101010101010000000"/>
+    <class days="0010000" id="47" room="8" start="196" weeks="1111111111000000000"/>
+    <class days="0010000" id="48" room="33" start="210" weeks="1111111111000000000"/>
+    <class days="0100000" id="49" room="39" start="96" weeks="1111111111111000000"/>
+    <class days="0010000" id="50" room="39" start="166" weeks="1111111111111000000"/>
+    <class days="0100000" id="51" room="9" start="216" weeks="1111111111111000000"/>
+    <class days="0100000" id="52" start="84" weeks="1111111111111000000"/>
+    <class days="0100000" id="53" start="84" weeks="1111111111111000000"/>
+    <class days="0001000" id="54" start="84" weeks="1111111111111000000"/>
+    <class days="0001000" id="55" start="84" weeks="1111111111111000000"/>
+    <class days="0100000" id="56" room="9" start="196" weeks="1111111111111000000"/>
+    <class days="1000000" id="57" room="39" start="156" weeks="0101010101000000000"/>
+    <class days="0100000" id="58" room="38" start="126" weeks="1111111111111000000"/>
+    <class days="0010000" id="59" room="38" start="106" weeks="1111111111111000000"/>
+    <class days="0100000" id="60" room="38" start="206" weeks="1111111111111000000"/>
+    <class days="0001000" id="61" room="38" start="150" weeks="1111111111111000000"/>
+    <class days="0100000" id="62" room="33" start="166" weeks="1111111111111000000"/>
+    <class days="0010000" id="63" room="9" start="129" weeks="1111111111111000000"/>
+    <class days="0001000" id="64" room="38" start="216" weeks="0000001111110000000"/>
+    <class days="0001000" id="65" room="39" start="196" weeks="1111111111111000000"/>
+    <class days="0000100" id="66" room="44" start="108" weeks="0100000000000000000"/>
+    <class days="0000100" id="67" room="44" start="108" weeks="0001000000000000000"/>
+    <class days="0000100" id="68" room="44" start="108" weeks="0000010000000000000"/>
+    <class days="0000100" id="69" room="44" start="156" weeks="0100000000000000000"/>
+    <class days="0000100" id="70" room="44" start="156" weeks="0001000000000000000"/>
+    <class days="0000100" id="71" room="44" start="156" weeks="0000010000000000000"/>
+    <class days="1000000" id="72" room="8" start="136" weeks="1111111101001000000"/>
+    <class days="0000100" id="73" room="38" start="132" weeks="1111111011111000000"/>
+    <class days="0001000" id="74" room="41" start="156" weeks="1111111111111000000"/>
+    <class days="0010000" id="75" room="5" start="210" weeks="1111111111111000000"/>
+    <class days="0100000" id="76" room="5" start="96" weeks="1111111111111000000"/>
+    <class days="1000000" id="77" room="37" start="168" weeks="1111111101000000000"/>
+    <class days="0010000" id="78" room="24" start="168" weeks="1111111111000000000"/>
+    <class days="0100000" id="79" room="39" start="176" weeks="1111111111111000000"/>
+    <class days="0100000" id="80" room="8" start="226" weeks="1111111111111000000"/>
+    <class days="0010000" id="81" room="9" start="168" weeks="1111111111111000000"/>
+    <class days="0010000" id="82" room="37" start="180" weeks="1111111111111000000"/>
+    <class days="0010000" id="83" room="37" start="189" weeks="1111111111111000000"/>
+    <class days="0010000" id="84" room="37" start="198" weeks="1111111111111000000"/>
+    <class days="0010000" id="85" room="37" start="207" weeks="1111111111111000000"/>
+    <class days="0010000" id="86" room="37" start="216" weeks="1111111111111000000"/>
+    <class days="0010000" id="87" room="37" start="225" weeks="1111111111111000000"/>
+    <class days="1000000" id="88" room="41" start="156" weeks="1111111101001000000"/>
+    <class days="0100000" id="89" room="41" start="106" weeks="1111111111111000000"/>
+    <class days="0100000" id="90" room="41" start="116" weeks="1111111111111000000"/>
+    <class days="1000000" id="91" room="41" start="166" weeks="1111111101001000000"/>
+    <class days="0100000" id="92" room="41" start="176" weeks="1111111111111000000"/>
+    <class days="1000000" id="93" room="6" start="120" weeks="1111111101001000000"/>
+    <class days="1000000" id="94" start="146" weeks="1111111101001000000"/>
+    <class days="0010000" id="95" room="8" start="96" weeks="1111111111111000000"/>
+    <class days="0001000" id="96" room="43" start="156" weeks="1111111111111000000"/>
+    <class days="0010000" id="97" room="7" start="86" weeks="1111111111111000000"/>
+    <class days="1000000" id="98" room="33" start="90" weeks="1111111101001000000"/>
+    <class days="0100000" id="99" room="39" start="216" weeks="1111111111111000000"/>
+    <class days="0100000" id="100" room="39" start="186" weeks="1111111111111000000"/>
+    <class days="0010000" id="101" room="39" start="156" weeks="1111111111111000000"/>
+    <class days="1000000" id="102" room="39" start="116" weeks="1111111101001000000"/>
+    <class days="0001000" id="103" room="39" start="226" weeks="1111111111111000000"/>
+    <class days="0010000" id="104" room="39" start="126" weeks="1111111111111000000"/>
+    <class days="0010000" id="105" room="39" start="96" weeks="1111111111111000000"/>
+    <class days="0010000" id="106" room="39" start="196" weeks="1111111111111000000"/>
+    <class days="0001000" id="107" room="33" start="226" weeks="1111111111111000000"/>
+    <class days="0100000" id="108" room="9" start="156" weeks="1111111111111000000"/>
+    <class days="0010000" id="109" room="41" start="146" weeks="1111111111111000000"/>
+    <class days="1000000" id="110" room="6" start="108" weeks="1111111101001000000"/>
+    <class days="1000000" id="111" room="6" start="132" weeks="1111111101001000000"/>
+    <class days="0001000" id="112" room="6" start="108" weeks="1111111111111000000"/>
+    <class days="0001000" id="113" room="6" start="144" weeks="1111111111111000000"/>
+    <class days="0100000" id="114" room="41" start="156" weeks="0101010101010000000"/>
+    <class days="0100000" id="115" room="41" start="156" weeks="1010101010101000000"/>
+    <class days="0001000" id="116" room="4" start="166" weeks="1111111111111000000"/>
+    <class days="1000000" id="117" room="4" start="146" weeks="1111111101001000000"/>
+    <class days="0001000" id="118" room="4" start="146" weeks="1111111111111000000"/>
+    <class days="0100000" id="119" room="4" start="166" weeks="1111111111111000000"/>
+    <class days="1000000" id="120" room="39" start="206" weeks="1111111101001000000"/>
+    <class days="0100000" id="121" room="40" start="126" weeks="1111111111111000000"/>
+    <class days="0001000" id="122" room="40" start="90" weeks="1111111111111000000"/>
+    <class days="0001000" id="123" room="17" start="126" weeks="1111111111111000000"/>
+    <class days="0100000" id="124" room="9" start="186" weeks="1111111111111000000"/>
+    <class days="0001000" id="125" room="42" start="196" weeks="1111111111111000000"/>
+    <class days="0001000" id="126" room="42" start="126" weeks="1111111111111000000"/>
+    <class days="0100000" id="127" room="9" start="146" weeks="1111111111111000000"/>
+    <class days="0010000" id="128" room="9" start="156" weeks="1111111111111000000"/>
+    <class days="0001000" id="129" room="8" start="116" weeks="1111111111111000000"/>
+    <class days="1000000" id="130" room="10" start="126" weeks="1111111101001000000"/>
+    <class days="1000000" id="131" room="10" start="116" weeks="1111111101001000000"/>
+    <class days="0010000" id="132" room="10" start="126" weeks="1111111111111000000"/>
+    <class days="1000000" id="133" room="10" start="136" weeks="1111111101001000000"/>
+    <class days="0010000" id="134" room="10" start="116" weeks="1111111111111000000"/>
+    <class days="0010000" id="135" room="40" start="210" weeks="1111111111000000000"/>
+    <class days="1000000" id="136" room="8" start="196" weeks="1111111101001000000"/>
+    <class days="1000000" id="137" room="9" start="206" weeks="1111111101001000000"/>
+    <class days="1000000" id="138" room="12" start="154" weeks="0000001101001000000"/>
+    <class days="1000000" id="139" start="154" weeks="0000001101001000000"/>
+    <class days="0100000" id="140" room="40" start="206" weeks="1111111111111000000"/>
+    <class days="0010000" id="141" room="9" start="182" weeks="1111111111000000000"/>
+    <class days="0001000" id="142" room="9" start="132" weeks="1111111111000000000"/>
+    <class days="0001000" id="143" room="7" start="156" weeks="1111111111000000000"/>
+    <class days="0001000" id="144" room="33" start="108" weeks="1111111111000000000"/>
+    <class days="1000000" id="145" room="33" start="226" weeks="1111111101001000000"/>
+    <class days="1000000" id="146" room="9" start="166" weeks="1111111101001000000"/>
+    <class days="0010000" id="147" room="9" start="119" weeks="1111111111111000000"/>
+    <class days="0010000" id="148" room="39" start="186" weeks="1111111111111000000"/>
+    <class days="0001000" id="149" room="39" start="216" weeks="1111111111111000000"/>
+    <class days="0010000" id="150" room="35" start="196" weeks="1111111111111000000"/>
+    <class days="0010000" id="151" room="39" start="136" weeks="1111111111111000000"/>
+    <class days="0010000" id="152" room="39" start="206" weeks="1111111111111000000"/>
+    <class days="1000000" id="153" room="6" start="144" weeks="1111111101001000000"/>
+    <class days="0001000" id="154" room="6" start="156" weeks="1111111111111000000"/>
+    <class days="0001000" id="155" room="7" start="140" weeks="1111111111000000000"/>
+    <class days="0010000" id="156" room="8" start="210" weeks="1111111111000000000"/>
+    <class days="0010000" id="157" room="35" start="180" weeks="1111111111000000000"/>
+    <class days="1000000" id="158" room="7" start="182" weeks="1111111101000000000"/>
+    <class days="1000000" id="159" room="7" start="196" weeks="1111111101000000000"/>
+    <class days="0100000" id="160" room="35" start="136" weeks="1111111111111000000"/>
+    <class days="1000000" id="161" room="35" start="226" weeks="1111111101001000000"/>
+    <class days="0001000" id="162" room="5" start="150" weeks="1111111111111000000"/>
+    <class days="0100000" id="163" room="40" start="156" weeks="1111111111111000000"/>
+    <class days="0010000" id="164" room="40" start="156" weeks="1111111111111000000"/>
+    <class days="0001000" id="165" room="40" start="156" weeks="1111111111111000000"/>
+    <class days="1000000" id="166" room="40" start="86" weeks="1111111101001000000"/>
+    <class days="0100000" id="167" room="9" start="84" weeks="1111111111000000000"/>
+    <class days="0001000" id="168" room="37" start="84" weeks="1111111111000000000"/>
+    <class days="0010000" id="169" room="35" start="168" weeks="1111111111000000000"/>
+    <class days="0010000" id="170" room="40" start="168" weeks="1010101010100000000"/>
+    <class days="0010000" id="171" room="40" start="168" weeks="0101010101000000000"/>
+    <class days="0100000" id="172" room="14" start="106" weeks="0000001111110000000"/>
+    <class days="0010000" id="173" room="14" start="146" weeks="0000001111110000000"/>
+    <class days="0100000" id="174" room="14" start="136" weeks="0000001111110000000"/>
+    <class days="0010000" id="175" room="19" start="123" weeks="1111111111111000000"/>
+    <class days="0001000" id="176" room="19" start="102" weeks="1111111111111000000"/>
+    <class days="0001000" id="177" room="19" start="123" weeks="1111111111111000000"/>
+    <class days="0100000" id="178" room="33" start="84" weeks="1111111111000000000"/>
+    <class days="0100000" id="179" room="33" start="132" weeks="1111111111000000000"/>
+    <class days="0100000" id="180" room="35" start="226" weeks="1111111111111000000"/>
+    <class days="1000000" id="181" room="35" start="84" weeks="1111111101000000000"/>
+    <class days="1000000" id="182" room="35" start="154" weeks="1111111101000000000"/>
+    <class days="0001000" id="183" room="33" start="182" weeks="1111111111000000000"/>
+    <class days="0001000" id="184" room="8" start="96" weeks="1111111111111000000"/>
+    <class days="0010000" id="185" room="43" start="96" weeks="1111111111000000000"/>
+    <class days="1000000" id="186" room="43" start="96" weeks="1111111101000000000"/>
+    <class days="1000000" id="187" room="43" start="144" weeks="1111111101000000000"/>
+    <class days="1000000" id="188" room="43" start="84" weeks="1111111101000000000"/>
+    <class days="1000000" id="189" room="43" start="132" weeks="1111111101000000000"/>
+    <class days="1000000" id="190" room="7" start="168" weeks="1111111101000000000"/>
+    <class days="0100000" id="191" room="7" start="126" weeks="1111111111000000000"/>
+    <class days="0100000" id="192" room="7" start="140" weeks="1111111111000000000"/>
+    <class days="0100000" id="193" room="7" start="154" weeks="1111111111000000000"/>
+    <class days="0100000" id="194" room="9" start="168" weeks="1111111111000000000"/>
+    <class days="0001000" id="195" room="40" start="126" weeks="1111111111000000000"/>
+    <class days="0010000" id="196" room="40" start="126" weeks="1111111111000000000"/>
+    <class days="0100000" id="197" room="8" start="98" weeks="1111111111111000000"/>
+    <class days="0001000" id="198" room="41" start="98" weeks="1111111111111000000"/>
+    <class days="0001000" id="199" room="12" start="159" weeks="0000001111110000000"/>
+    <class days="0001000" id="200" start="159" weeks="0000001111110000000"/>
+    <class days="0010000" id="201" room="12" start="96" weeks="0000001111110000000"/>
+    <class days="0010000" id="202" start="96" weeks="0000001111110000000"/>
+    <class days="0010000" id="203" room="12" start="123" weeks="0000001111110000000"/>
+    <class days="0010000" id="204" start="123" weeks="0000001111110000000"/>
+    <class days="0100000" id="205" room="12" start="96" weeks="0000001111110000000"/>
+    <class days="0100000" id="206" start="96" weeks="0000001111110000000"/>
+    <class days="1000000" id="207" room="12" start="126" weeks="0000011101000000000"/>
+    <class days="1000000" id="208" start="126" weeks="0000011101000000000"/>
+    <class days="0100000" id="209" room="12" start="150" weeks="0000001111110000000"/>
+    <class days="0100000" id="210" start="150" weeks="0000001111110000000"/>
+    <class days="0010000" id="211" room="12" start="159" weeks="0000001111110000000"/>
+    <class days="1000000" id="212" room="39" start="98" weeks="1111111101000000000"/>
+    <class days="0010000" id="213" room="39" start="106" weeks="1111111111111000000"/>
+    <class days="0010000" id="214" room="39" start="86" weeks="1111111111111000000"/>
+    <class days="1000000" id="215" room="39" start="86" weeks="1111111101001000000"/>
+    <class days="0001000" id="216" room="35" start="146" weeks="1111111111111000000"/>
+    <class days="0100000" id="217" room="33" start="146" weeks="1111111111111000000"/>
+    <class days="0010000" id="218" room="35" start="106" weeks="1111111111111000000"/>
+    <class days="0010000" id="219" room="35" start="136" weeks="1111111111111000000"/>
+    <class days="1000000" id="220" room="7" start="126" weeks="1111111101001000000"/>
+    <class days="0010000" id="221" room="35" start="116" weeks="1111111111111000000"/>
+    <class days="0001000" id="222" room="8" start="176" weeks="1111111111111000000"/>
+    <class days="0100000" id="223" room="7" start="226" weeks="1111111111111000000"/>
+    <class days="0100000" id="224" room="4" start="86" weeks="1000000000000000000"/>
+    <class days="0100000" id="225" room="4" start="96" weeks="0100000000000000000"/>
+    <class days="0001000" id="226" room="4" start="96" weeks="0010000000000000000"/>
+    <class days="0100000" id="227" room="4" start="106" weeks="0001000000000000000"/>
+    <class days="0100000" id="228" room="4" start="86" weeks="0000100000000000000"/>
+    <class days="0001000" id="229" room="43" start="86" weeks="0000010000000000000"/>
+    <class days="0001000" id="230" room="4" start="106" weeks="0000001000000000000"/>
+    <class days="0100000" id="231" room="4" start="146" weeks="0000000100000000000"/>
+    <class days="0100000" id="232" room="27" start="116" weeks="0000000010000000000"/>
+    <class days="0010000" id="233" room="27" start="126" weeks="0000000001000000000"/>
+    <class days="0001000" id="234" room="27" start="146" weeks="0000000000100000000"/>
+    <class days="0001000" id="235" start="86" weeks="0000000000010000000"/>
+    <class days="1000000" id="236" start="96" weeks="0000000000001000000"/>
+    <class days="1000000" id="237" room="41" start="140" weeks="1111111101000000000"/>
+    <class days="0001000" id="238" room="9" start="116" weeks="1111111111111000000"/>
+    <class days="0001000" id="239" room="39" start="156" weeks="1111111111111000000"/>
+    <class days="0100000" id="240" room="37" start="136" weeks="1111111111111000000"/>
+    <class days="1000000" id="241" room="37" start="116" weeks="1111111101001000000"/>
+    <class days="0010000" id="242" room="8" start="136" weeks="1111111111111000000"/>
+    <class days="0001000" id="243" room="39" start="96" weeks="1111111111111000000"/>
+    <class days="0100000" id="244" room="41" start="146" weeks="1111111111111000000"/>
+    <class days="1000000" id="245" room="2" start="126" weeks="1111111101000000000"/>
+    <class days="0100000" id="246" room="43" start="156" weeks="1111111111000000000"/>
+    <class days="0010000" id="247" room="43" start="156" weeks="1111111111111000000"/>
+    <class days="1000000" id="248" room="43" start="156" weeks="1111111101001000000"/>
+    <class days="0010000" id="249" room="43" start="86" weeks="1111111111111000000"/>
+    <class days="0001000" id="250" room="43" start="136" weeks="1111111111111000000"/>
+    <class days="1000000" id="251" room="43" start="176" weeks="1111111101001000000"/>
+    <class days="0001000" id="252" start="126" weeks="0000001111110000000"/>
+    <class days="1000000" id="253" start="116" weeks="0000001101001000000"/>
+    <class days="0100000" id="254" start="206" weeks="0000001111110000000"/>
+    <class days="0001000" id="255" start="206" weeks="0000001111110000000"/>
+    <class days="0010000" id="256" start="116" weeks="0000001111110000000"/>
+    <class days="0100000" id="257" room="2" start="176" weeks="1111111111111000000"/>
+    <class days="0010000" id="258" room="41" start="166" weeks="1111111111111000000"/>
+    <class days="0010000" id="259" room="41" start="176" weeks="1111111111111000000"/>
+    <class days="1000000" id="260" room="40" start="154" weeks="1111111101000000000"/>
+    <class days="0100000" id="261" room="40" start="84" weeks="1111111111000000000"/>
+    <class days="1000000" id="262" room="7" start="106" weeks="1010101000001000000"/>
+    <class days="1000000" id="263" room="33" start="146" weeks="1111111101001000000"/>
+    <class days="0001000" id="264" room="9" start="206" weeks="1111111111111000000"/>
+    <class days="1000000" id="265" room="37" start="140" weeks="1111111101000000000"/>
+    <class days="0100000" id="266" room="5" start="126" weeks="1010101010100000000"/>
+    <class days="0010000" id="267" room="5" start="112" weeks="0101010101000000000"/>
+    <class days="0000100" id="268" room="22" start="108" weeks="0000000000010000000"/>
+    <class days="0000100" id="269" room="22" start="108" weeks="0000000000001000000"/>
+    <class days="0000100" id="270" room="22" start="108" weeks="0000000000000100000"/>
+    <class days="0000100" id="271" room="22" start="108" weeks="0000000000000010000"/>
+    <class days="0010000" id="272" room="40" start="116" weeks="1111111111111000000"/>
+    <class days="0100000" id="273" start="176" weeks="1111111111111000000"/>
+    <class days="0100000" id="274" room="8" start="196" weeks="1111111111111000000"/>
+    <class days="0001000" id="275" room="37" start="196" weeks="1111111111111000000"/>
+    <class days="0010000" id="276" room="8" start="106" weeks="1111111111111000000"/>
+    <class days="0001000" id="277" room="8" start="86" weeks="1111111111111000000"/>
+    <class days="0001000" id="278" room="9" start="176" weeks="1111111111111000000"/>
+    <class days="1000000" id="279" room="37" start="216" weeks="1010101000001000000"/>
+    <class days="1000000" id="280" room="35" start="126" weeks="0101010101000000000"/>
+    <class days="0001000" id="281" room="35" start="196" weeks="1111111111111000000"/>
+    <class days="0100000" id="282" room="35" start="154" weeks="1111111111000000000"/>
+    <class days="0001000" id="283" room="8" start="186" weeks="1111111111111000000"/>
+    <class days="0010000" id="284" room="9" start="216" weeks="1010101010101000000"/>
+    <class days="1000000" id="285" room="33" start="156" weeks="1111111101001000000"/>
+    <class days="1000000" id="286" room="33" start="166" weeks="1111111101001000000"/>
+    <class days="1000000" id="287" room="41" start="106" weeks="1111111101001000000"/>
+    <class days="0010000" id="288" room="43" start="146" weeks="1111111111111000000"/>
+    <class days="0001000" id="289" room="9" start="96" weeks="1111111111111000000"/>
+    <class days="0001000" id="290" room="7" start="176" weeks="1111111111111000000"/>
+    <class days="0001000" id="291" room="7" start="186" weeks="1111111111111000000"/>
+    <class days="1000000" id="292" room="33" start="116" weeks="1111111101001000000"/>
+    <class days="0001000" id="293" room="8" start="136" weeks="1111111111111000000"/>
+    <class days="0001000" id="294" room="33" start="86" weeks="1111111111111000000"/>
+    <class days="0100000" id="295" room="9" start="136" weeks="1111111111111000000"/>
+    <class days="0001000" id="296" room="8" start="216" weeks="1111111111111000000"/>
+    <class days="0100000" id="297" room="35" start="186" weeks="1111111111111000000"/>
+    <class days="0001000" id="298" room="5" start="132" weeks="1111111111110000000"/>
+    <class days="0001000" id="299" start="96" weeks="1111111111110000000"/>
+    <class days="0001000" id="300" room="5" start="114" weeks="1111111111110000000"/>
+    <class days="0001000" id="301" room="40" start="176" weeks="1111111111110000000"/>
+    <class days="0001000" id="302" start="240" weeks="1111111111111000000"/>
+    <class days="0001000" id="303" room="41" start="146" weeks="1111111111111000000"/>
+    <class days="0001000" id="304" room="37" start="116" weeks="1111111111111000000"/>
+    <class days="0010000" id="305" room="41" start="136" weeks="1111111111111000000"/>
+    <class days="0100000" id="306" room="35" start="206" weeks="1111111111111000000"/>
+    <class days="0001000" id="307" room="35" start="156" weeks="1111111111111000000"/>
+    <class days="0001000" id="308" room="39" start="116" weeks="1111111111111000000"/>
+    <class days="0100000" id="309" start="196" weeks="1111111111111000000"/>
+    <class days="0100000" id="310" start="96" weeks="1111111111111000000"/>
+    <class days="0000100" id="311" start="132" weeks="1111111011111000000"/>
+    <class days="1000000" id="312" room="15" start="150" weeks="1111111101000000000"/>
+    <class days="0001000" id="313" room="2" start="146" weeks="1111111111111000000"/>
+    <class days="1000000" id="314" room="41" start="176" weeks="1111111101001000000"/>
+    <class days="1000000" id="315" room="2" start="86" weeks="1111111101001000000"/>
+    <class days="0100000" id="316" room="37" start="196" weeks="1111111111111000000"/>
+    <class days="0100000" id="317" room="37" start="206" weeks="1111111111111000000"/>
+    <class days="0010000" id="318" room="42" start="116" weeks="1111111111111000000"/>
+    <class days="0001000" id="319" room="40" start="226" weeks="1111111111111000000"/>
+    <class days="0010000" id="320" room="7" start="166" weeks="1111111111111000000"/>
+    <class days="0001000" id="321" room="37" start="150" weeks="1010101010101000000"/>
+    <class days="0001000" id="322" room="37" start="150" weeks="0101010101010000000"/>
+    <class days="1000000" id="323" room="39" start="146" weeks="1111111101001000000"/>
+    <class days="0001000" id="324" room="39" start="86" weeks="1111111111111000000"/>
+    <class days="0100000" id="325" room="39" start="86" weeks="1111111111111000000"/>
+    <class days="0000100" id="326" room="3" start="120" weeks="0010000000000000000"/>
+    <class days="0000100" id="327" room="3" start="132" weeks="0010000000000000000"/>
+    <class days="0000100" id="328" room="3" start="168" weeks="0100000000000000000"/>
+    <class days="0000100" id="329" room="3" start="120" weeks="0100000000000000000"/>
+    <class days="0000100" id="330" room="3" start="144" weeks="0100000000000000000"/>
+    <class days="0000100" id="331" room="3" start="144" weeks="0010000000000000000"/>
+    <class days="0001000" id="332" room="33" start="206" weeks="1111111111111000000"/>
+    <class days="1000000" id="333" room="12" start="106" weeks="0000001101001000000"/>
+    <class days="1000000" id="334" start="106" weeks="0000001101001000000"/>
+    <class days="0100000" id="335" room="12" start="126" weeks="0000001111110000000"/>
+    <class days="0100000" id="336" start="126" weeks="0000001111110000000"/>
+    <class days="0010000" id="337" room="9" start="216" weeks="0101010101010000000"/>
+    <class days="0001000" id="338" room="6" start="120" weeks="1111111111111000000"/>
+    <class days="0001000" id="339" room="6" start="132" weeks="1111111111111000000"/>
+    <class days="0001000" id="340" room="41" start="136" weeks="1111111111111000000"/>
+    <class days="0001000" id="341" room="39" start="176" weeks="1111111111111000000"/>
+    <class days="0100000" id="342" room="7" start="84" weeks="1111111111000000000"/>
+    <class days="0100000" id="343" room="7" start="98" weeks="1111111111000000000"/>
+    <class days="0100000" id="344" room="9" start="96" weeks="1111111111111000000"/>
+    <class days="0100000" id="345" room="9" start="126" weeks="1111111111111000000"/>
+    <class days="0001000" id="346" room="8" start="154" weeks="1111111111000000000"/>
+    <class days="0010000" id="347" room="7" start="112" weeks="1111111111000000000"/>
+    <class days="0100000" id="348" room="35" start="112" weeks="1111111111000000000"/>
+    <class days="1000000" id="349" room="9" start="126" weeks="1111111101001000000"/>
+    <class days="0010000" id="350" room="43" start="176" weeks="1111111111111000000"/>
+    <class days="0001000" id="351" room="43" start="106" weeks="1111111111111000000"/>
+    <class days="0001000" id="352" room="33" start="126" weeks="1111111111111000000"/>
+    <class days="0010000" id="353" room="8" start="146" weeks="1111111111111000000"/>
+    <class days="0001000" id="354" room="33" start="154" weeks="1111111111000000000"/>
+    <class days="0010000" id="355" room="9" start="98" weeks="1111111111000000000"/>
+    <class days="0010000" id="356" room="8" start="182" weeks="1111111111000000000"/>
+    <class days="0100000" id="357" room="33" start="182" weeks="1111111111000000000"/>
+    <class days="1000000" id="358" room="8" start="182" weeks="1111111101000000000"/>
+    <class days="0010000" id="359" room="35" start="210" weeks="1111111111111000000"/>
+    <class days="0010000" id="360" room="9" start="196" weeks="1111111111000000000"/>
+    <class days="0001000" id="361" room="33" start="140" weeks="1111111111000000000"/>
+    <class days="0010000" id="362" room="7" start="126" weeks="1111111111000000000"/>
+    <class days="0100000" id="363" room="8" start="166" weeks="1111111111111000000"/>
+    <class days="0100000" id="364" room="8" start="186" weeks="1111111111111000000"/>
+    <class days="0100000" id="365" room="33" start="96" weeks="1111111111000000000"/>
+    <class days="0010000" id="366" room="9" start="84" weeks="1111111111000000000"/>
+    <class days="0100000" id="367" room="4" start="154" weeks="0010000000000000000"/>
+    <class days="0010000" id="368" room="31" start="84" weeks="0010000000000000000"/>
+    <class days="0010000" id="369" room="4" start="168" weeks="0001000000000000000"/>
+    <class days="1000000" id="370" room="31" start="112" weeks="0001000000000000000"/>
+    <class days="1000000" id="371" room="4" start="168" weeks="0000100000000000000"/>
+    <class days="0010000" id="372" room="31" start="168" weeks="0000100000000000000"/>
+    <class days="0010000" id="373" room="31" start="154" weeks="0000010000000000000"/>
+    <class days="0100000" id="374" room="4" start="98" weeks="0000010000000000000"/>
+    <class days="0100000" id="375" room="31" start="98" weeks="0000001000000000000"/>
+    <class days="0010000" id="376" room="4" start="84" weeks="0000001000000000000"/>
+    <class days="0010000" id="377" room="31" start="84" weeks="0000000100000000000"/>
+    <class days="0010000" id="378" room="4" start="154" weeks="0000000100000000000"/>
+    <class days="0000100" id="379" room="13" start="138" weeks="0000000010000000000"/>
+    <class days="0000100" id="380" room="13" start="120" weeks="0000000010000000000"/>
+    <class days="0000100" id="381" room="13" start="120" weeks="0000000001000000000"/>
+    <class days="0000100" id="382" room="13" start="138" weeks="0000000001000000000"/>
+    <class days="1000000" id="383" room="4" start="98" weeks="1111100000000000000"/>
+    <class days="0001000" id="384" room="20" start="132" weeks="1111100000000000000"/>
+    <class days="0001000" id="385" room="20" start="132" weeks="0000011111000000000"/>
+    <class days="1000000" id="386" room="4" start="168" weeks="0000011101000000000"/>
+    <class days="1000000" id="387" room="40" start="216" weeks="1111111101001000000"/>
+    <class days="1000000" id="388" room="40" start="166" weeks="1111111101001000000"/>
+    <class days="0010000" id="389" room="40" start="96" weeks="1111111111111000000"/>
+    <class days="0100000" id="390" room="19" start="102" weeks="1111110000000000000"/>
+    <class days="0100000" id="391" room="19" start="102" weeks="0000001111110000000"/>
+    <class days="0010000" id="392" room="19" start="102" weeks="1111110000000000000"/>
+    <class days="0010000" id="393" room="19" start="102" weeks="0000001111110000000"/>
+    <class days="0100000" id="394" room="14" start="86" weeks="0000001111110000000"/>
+    <class days="1000000" id="395" room="14" start="136" weeks="0000001101001000000"/>
+    <class days="1000000" id="396" room="14" start="156" weeks="0000001101001000000"/>
+    <class days="0010000" id="397" room="14" start="96" weeks="0000001111110000000"/>
+    <class days="0010000" id="398" room="8" start="86" weeks="1111111111111000000"/>
+    <class days="0001000" id="399" room="7" start="196" weeks="1111111111111000000"/>
+    <class days="0010000" id="400" room="7" start="156" weeks="1111111111111000000"/>
+    <class days="1000000" id="401" room="2" start="146" weeks="1111111101001000000"/>
+    <class days="0100000" id="402" room="43" start="168" weeks="1111111111000000000"/>
+    <class days="0100000" id="403" room="43" start="84" weeks="1111111111000000000"/>
+    <class days="0100000" id="404" room="43" start="126" weeks="1111111111000000000"/>
+    <class days="0001000" id="405" room="43" start="168" weeks="1111111111000000000"/>
+    <class days="0001000" id="406" room="38" start="176" weeks="1111111111111000000"/>
+    <class days="0001000" id="407" room="41" start="166" weeks="1111111111111000000"/>
+    <class days="0010000" id="408" room="37" start="116" weeks="1111111111111000000"/>
+    <class days="0100000" id="409" room="8" start="136" weeks="1111111111111000000"/>
+    <class days="0001000" id="410" room="9" start="86" weeks="1111111111111000000"/>
+    <class days="0010000" id="411" room="37" start="106" weeks="1111111111111000000"/>
+    <class days="0010000" id="412" room="41" start="96" weeks="1111111111111000000"/>
+    <class days="0100000" id="413" room="7" start="186" weeks="1111111111111000000"/>
+    <class days="0100000" id="414" room="7" start="196" weeks="1111111111111000000"/>
+    <class days="0001000" id="415" room="35" start="166" weeks="1111111111111000000"/>
+    <class days="0001000" id="416" room="35" start="176" weeks="1111111111111000000"/>
+    <class days="1000000" id="417" room="38" start="186" weeks="1111111101000000000"/>
+    <class days="1000000" id="418" room="38" start="198" weeks="1111111101000000000"/>
+    <class days="1000000" id="419" room="35" start="206" weeks="1111111101001000000"/>
+    <class days="0100000" id="420" room="40" start="186" weeks="1111111111111000000"/>
+    <class days="0010000" id="421" room="8" start="168" weeks="1111111111111000000"/>
+    <class days="0010000" id="422" room="7" start="140" weeks="1111111111111000000"/>
+    <class days="0010000" id="423" start="168" weeks="1111111111111000000"/>
+    <class days="1000000" id="424" room="33" start="186" weeks="1010101000001000000"/>
+    <class days="1000000" id="425" room="33" start="186" weeks="0101010101000000000"/>
+    <class days="0000010" id="426" start="108" weeks="1111111111000000000"/>
+    <class days="0010000" id="427" start="106" weeks="1111111111110000000"/>
+    <class days="0010000" id="428" start="114" weeks="1111111111110000000"/>
+    <class days="0001000" id="429" start="222" weeks="1111111111110000000"/>
+    <class days="0000100" id="430" start="150" weeks="1111111011110000000"/>
+    <class days="0000100" id="431" start="108" weeks="0000000000000111111"/>
+    <class days="0010000" id="432" start="108" weeks="0000000000000111111"/>
+    <class days="1000000" id="433" room="5" start="96" weeks="1111111101000000000"/>
+    <class days="1000000" id="434" room="5" start="114" weeks="1111111101000000000"/>
+    <class days="0001000" id="435" room="5" start="96" weeks="1111111111110000000"/>
+    <class days="0001000" id="436" start="114" weeks="1111111111110000000"/>
+    <class days="0001000" id="437" start="132" weeks="1111111111110000000"/>
+    <class days="0001000" id="438" start="176" weeks="1111111111110000000"/>
+    <class days="0000100" id="439" start="108" weeks="0000011011000000000"/>
+    <class days="0000100" id="440" start="108" weeks="0000000000000111111"/>
+    <class days="1000000" id="441" room="14" start="99" weeks="1111111101000000000"/>
+    <class days="1000000" id="442" room="14" start="117" weeks="1111111101000000000"/>
+    <class days="1000000" id="443" start="132" weeks="1111111101000000000"/>
+    <class days="1000000" id="444" start="150" weeks="1111111101000000000"/>
+    <class days="0100000" id="445" start="96" weeks="1111111111110000000"/>
+    <class days="0100000" id="446" start="114" weeks="1111111111110000000"/>
+    <class days="0010000" id="447" room="4" start="106" weeks="1111111111110000000"/>
+    <class days="0001000" id="448" start="204" weeks="1111111111110000000"/>
+    <class days="0001000" id="449" start="186" weeks="1111111111110000000"/>
+    <class days="0000100" id="450" start="84" weeks="1111111011110000000"/>
+    <class days="0010000" id="451" start="132" weeks="1111111111110000000"/>
+    <class days="1000000" id="452" room="2" start="156" weeks="1111111101000000000"/>
+    <class days="1000000" id="453" room="2" start="174" weeks="1111111101000000000"/>
+    <class days="0100000" id="454" room="2" start="96" weeks="1111111111110000000"/>
+    <class days="0010000" id="455" room="2" start="126" weeks="1111111111110000000"/>
+    <class days="0100000" id="456" room="2" start="126" weeks="1111111111110000000"/>
+    <class days="0100000" id="457" room="2" start="144" weeks="1111111111110000000"/>
+    <class days="0010000" id="458" room="2" start="177" weeks="1111111111110000000"/>
+    <class days="0100000" id="459" start="162" weeks="0000011111000000000"/>
+    <class days="0100000" id="460" start="144" weeks="1111111111111000000"/>
+    <class days="1000000" id="461" start="186" weeks="1111111101001000000"/>
+    <class days="0100000" id="462" start="108" weeks="1111111111111000000"/>
+    <class days="0001000" id="463" start="96" weeks="1111111111111000000"/>
+    <class days="0001000" id="464" start="176" weeks="1111111111111000000"/>
+    <class days="0010000" id="465" start="150" weeks="1111111111111000000"/>
+    <class days="0000100" id="466" room="4" start="150" weeks="0000000000000100000"/>
+    <class days="0000100" id="467" room="4" start="96" weeks="0000000000000000100"/>
+    <class days="0000100" id="468" room="4" start="168" weeks="0000000000000000010"/>
+    <class days="0000100" id="469" room="41" start="141" weeks="0000000000000001000"/>
+    <class days="0000100" id="470" room="41" start="132" weeks="0000000000000100000"/>
+    <class days="0000100" id="471" room="41" start="204" weeks="0000000000000000100"/>
+    <class days="1000000" id="472" room="35" start="106" weeks="1111111101001000000"/>
+    <class days="0001000" id="473" room="7" start="116" weeks="1111111111111000000"/>
+    <class days="1000000" id="474" room="8" start="156" weeks="1111111101001000000"/>
+    <class days="1000000" id="475" room="7" start="136" weeks="1111111101001000000"/>
+    <class days="0100000" id="476" room="8" start="116" weeks="1111111111111000000"/>
+    <class days="0000100" id="477" room="8" start="204" weeks="0000000000000000001"/>
+    <class days="0000100" id="478" room="39" start="105" weeks="0000000000000000010"/>
+    <class days="0000100" id="479" room="7" start="195" weeks="0000000000000000010"/>
+    <class days="0000100" id="480" room="39" start="150" weeks="0000000000000100000"/>
+    <class days="0000100" id="481" room="35" start="105" weeks="0000000000000010000"/>
+    <class days="0000100" id="482" room="35" start="105" weeks="0000000000000100000"/>
+    <class days="0000100" id="483" room="35" start="105" weeks="0000000000000000001"/>
+    <class days="0000100" id="484" room="35" start="105" weeks="0000000000000001000"/>
+    <class days="0000100" id="485" room="39" start="213" weeks="0000000000000000010"/>
+    <class days="0000100" id="486" room="39" start="177" weeks="0000000000000001000"/>
+    <class days="0000100" id="487" room="33" start="123" weeks="0000000000000000010"/>
+    <class days="0000100" id="488" room="4" start="168" weeks="0000000000000100000"/>
+    <class days="0000100" id="489" room="4" start="195" weeks="0000000000000010000"/>
+    <class days="0000100" id="490" room="4" start="159" weeks="0000000000000001000"/>
+    <class days="0010000" id="491" room="14" start="114" weeks="1111111111111000000"/>
+    <class days="0000100" id="492" room="41" start="108" weeks="0100000000000000000"/>
+    <class days="0000100" id="493" room="43" start="120" weeks="0100000000000000000"/>
+    <class days="0001000" id="494" start="120" weeks="1111111111111000000"/>
+    <class days="0000100" id="495" start="96" weeks="0100000000000000000"/>
+    <class days="0000100" id="496" start="96" weeks="0000000001000000000"/>
+    <class days="0000100" id="497" start="96" weeks="0000000000010000000"/>
+    <class days="0000100" id="498" start="114" weeks="1111111011110000000"/>
+    <class days="0000100" id="499" start="102" weeks="1111111011110000000"/>
+    <class days="0100000" id="500" start="120" weeks="1111111111110000000"/>
+    <class days="0001000" id="501" start="174" weeks="0000000000000111111"/>
+    <class days="1000000" id="502" start="174" weeks="0000000000000111111"/>
+    <class days="0000100" id="503" room="33" start="204" weeks="0000000001000000000"/>
+    <class days="0000100" id="504" start="96" weeks="0000100000000000000"/>
+    <class days="0100000" id="505" start="126" weeks="1111111111110000000"/>
+    <class days="0000100" id="506" room="7" start="141" weeks="0100000000000000000"/>
+    <class days="1000000" id="507" start="144" weeks="1111111101000000000"/>
+    <class days="0001000" id="508" start="162" weeks="1111111111110000000"/>
+    <class days="0100000" id="509" start="138" weeks="1111111111110000000"/>
+    <class days="0100000" id="510" start="156" weeks="0000000000000111111"/>
+    <class days="0001000" id="511" start="156" weeks="0000000000000111111"/>
+    <class days="0001000" id="512" start="156" weeks="0000000000000111111"/>
+    <class days="1000000" id="513" start="156" weeks="0000000000000111111"/>
+    <class days="0001000" id="514" start="120" weeks="1111111111110000000"/>
+    <class days="0000100" id="515" start="96" weeks="0000000000100000000"/>
+    <class days="0000100" id="516" start="96" weeks="0001000000000000000"/>
+    <class days="0000100" id="517" start="84" weeks="1111111011110000000"/>
+    <class days="0001000" id="518" start="138" weeks="1111111111110000000"/>
+    <class days="0000100" id="519" start="222" weeks="0000100000000000000"/>
+    <class days="0001000" id="520" start="114" weeks="0000000000000111111"/>
+    <class days="0100000" id="521" start="114" weeks="0000000000000111111"/>
+    <class days="0100000" id="522" start="96" weeks="0000000000000111111"/>
+    <class days="0001000" id="523" start="96" weeks="1111111111110000000"/>
+    <class days="1000000" id="524" start="114" weeks="1111111101000000000"/>
+    <class days="0001000" id="525" start="96" weeks="0000000000000111111"/>
+    <class days="0001000" id="526" start="114" weeks="1111111111110000000"/>
+    <class days="1000000" id="527" start="96" weeks="1111111101000000000"/>
+    <class days="1000000" id="528" start="102" weeks="0000000000000111111"/>
+    <class days="1000000" id="529" start="120" weeks="0000000000000111111"/>
+    <class days="1000000" id="530" start="138" weeks="0000000000000111111"/>
+    <class days="0100000" id="531" start="96" weeks="0000000000000111111"/>
+    <class days="0100000" id="532" start="114" weeks="0000000000000111111"/>
+    <class days="0100000" id="533" start="132" weeks="0000000000000111111"/>
+    <class days="0010000" id="534" start="138" weeks="0000000000000111111"/>
+    <class days="0001000" id="535" start="96" weeks="0000000000000111111"/>
+    <class days="1000000" id="536" start="90" weeks="1111111101000000000"/>
+    <class days="1000000" id="537" start="108" weeks="1111111101000000000"/>
+    <class days="1000000" id="538" start="126" weeks="1111111101000000000"/>
+    <class days="1000000" id="539" start="162" weeks="1111111101000000000"/>
+    <class days="1000000" id="540" start="198" weeks="1111111101000000000"/>
+    <class days="1000000" id="541" start="216" weeks="1111111101000000000"/>
+    <class days="0100000" id="542" start="84" weeks="1111111111110000000"/>
+    <class days="0100000" id="543" start="102" weeks="1111111111110000000"/>
+    <class days="0100000" id="544" start="120" weeks="1111111111110000000"/>
+    <class days="0100000" id="545" start="138" weeks="1111111111110000000"/>
+    <class days="0100000" id="546" start="156" weeks="1111111111110000000"/>
+    <class days="0100000" id="547" start="174" weeks="1111111111110000000"/>
+    <class days="0100000" id="548" start="213" weeks="1111111111110000000"/>
+    <class days="0010000" id="549" start="132" weeks="1111111111110000000"/>
+    <class days="0010000" id="550" start="150" weeks="1111111111110000000"/>
+    <class days="0001000" id="551" start="84" weeks="1111111111110000000"/>
+    <class days="0001000" id="552" start="102" weeks="1111111111110000000"/>
+    <class days="0000100" id="553" start="96" weeks="1000000000000000000"/>
+    <class days="0010000" id="554" start="132" weeks="1111111111111000000"/>
+    <class days="0100000" id="555" start="174" weeks="1111111111111000000"/>
+    <class days="0010000" id="556" start="132" weeks="1111111111111000000"/>
+    <class days="0010000" id="557" start="84" weeks="1111111111000000000"/>
+    <class days="0100000" id="558" start="112" weeks="1111111111000000000"/>
+    <class days="0010000" id="559" start="196" weeks="1111111111000000000"/>
+    <class days="0100000" id="560" start="132" weeks="1111111111111000000"/>
+    <class days="1000000" id="561" start="90" weeks="1111111101001000000"/>
+</solution>

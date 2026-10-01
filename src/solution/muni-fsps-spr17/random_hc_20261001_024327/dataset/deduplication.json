@@ -1,0 +1,9 @@
+{
+  "candidate_count": 2500,
+  "retained_count": 2500,
+  "variable_blocks": 568,
+  "near_fraction": 0.01,
+  "threshold_blocks": 5,
+  "preference": "lower DF, then smaller seed",
+  "exclusions": []
+}
