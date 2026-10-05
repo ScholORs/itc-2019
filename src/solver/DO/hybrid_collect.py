@@ -27,6 +27,67 @@ ACTIVE=HERE/'active_hybrid.json'
 LOCK=HERE/'.collector.lock'  # Shared with original collector: never compile/run both batches at once.
 
 
+def process_alive(pid):
+    """Unknown/access-denied means alive; never reclaim an uncertain owner."""
+    if pid<=0:return True
+    if os.name=='nt':
+        import ctypes
+        from ctypes import wintypes
+        kernel=ctypes.WinDLL('kernel32',use_last_error=True)
+        kernel.OpenProcess.argtypes=[wintypes.DWORD,wintypes.BOOL,wintypes.DWORD]
+        kernel.OpenProcess.restype=wintypes.HANDLE
+        kernel.GetExitCodeProcess.argtypes=[wintypes.HANDLE,ctypes.POINTER(wintypes.DWORD)]
+        kernel.CloseHandle.argtypes=[wintypes.HANDLE]
+        handle=kernel.OpenProcess(0x1000,False,pid)
+        if not handle:return ctypes.get_last_error()!=87  # invalid PID -> absent
+        try:
+            code=wintypes.DWORD()
+            if not kernel.GetExitCodeProcess(handle,ctypes.byref(code)):return True
+            return code.value==259
+        finally:kernel.CloseHandle(handle)
+    try:os.kill(pid,0)
+    except ProcessLookupError:return False
+    except PermissionError:return True
+    return True
+
+
+def acquire_lock(path=LOCK,active_paths=None):
+    active_paths=active_paths or [ACTIVE,HERE/'active_run.json']
+    for attempt in range(3):
+        try:
+            fd=os.open(path,os.O_CREAT|os.O_EXCL|os.O_WRONLY)
+        except FileExistsError:
+            snapshot=path.read_bytes()
+            try:owner=json.loads(snapshot.decode('utf-8'))
+            except (ValueError,UnicodeError):owner={}
+            pid=owner.get('pid')
+            # Protect the short window between exclusive create and publishing owner.
+            if time.time()-path.stat().st_mtime<60:
+                raise SystemExit(f'Lock recently created: {path}. Wait a minute and retry; another batch may be starting.')
+            candidates=[owner] if pid is not None else []
+            for active in active_paths:
+                if active.exists():
+                    try:candidates.append(json.loads(active.read_text(encoding='utf-8')))
+                    except (ValueError,OSError):
+                        raise SystemExit(f'Cannot verify lock owner: {active}. Check running tasks before removing {path}.')
+            if not candidates:
+                raise SystemExit(f'Old lock has no PID record: {path}. If no collect.py or hybrid_collect.py task is running, delete this file and retry. No solution files need deletion.')
+            for candidate in candidates:
+                try:alive=process_alive(int(candidate['pid']))
+                except (KeyError,TypeError,ValueError):alive=True
+                if alive:
+                    raise SystemExit(f"Batch lock is occupied (PID {candidate.get('pid','unknown')}): {path}. Stop that batch first; the lock was not deleted.")
+            # Recheck contents to avoid reclaiming a replacement lock.
+            if path.read_bytes()!=snapshot:continue
+            retry_file_operation(lambda:path.unlink())
+            print(f'Removed stale batch lock: {path}',flush=True)
+            continue
+        with os.fdopen(fd,'w',encoding='utf-8') as stream:
+            json.dump(dict(pid=os.getpid(),created=time.time()),stream)
+        return
+    raise SystemExit('Lock changed during startup; retry after other batch exits.')
+
+
 def luby(index):
     if index<1:raise ValueError('Luby index is one-based')
     while True:
@@ -251,7 +312,7 @@ def main():
     model=GatedAE(blocks);model.load_state_dict(torch.load(modeldir/'model.pt',map_location='cpu',weights_only=True));model.eval()
     scale=np.load(modeldir/'latent_std.npy');assert scale.shape==(512,)
     out=(args.output or RESULTS/dt.datetime.now().strftime('hc_do_luby_%Y%m%d_%H%M%S')).resolve()
-    fd=os.open(LOCK,os.O_CREAT|os.O_EXCL|os.O_WRONLY);os.close(fd)
+    acquire_lock()
     controller=None
     try:
         out.mkdir(parents=True,exist_ok=False)
