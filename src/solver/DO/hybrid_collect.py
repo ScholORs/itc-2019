@@ -116,8 +116,8 @@ def run_worker(spec,out,controller,args,model,blocks,fullidx,scale,instance_byte
     name=f"round_{spec['round']:02}_seed_{spec['seed']}"
     stage=out/'.pending'/name;stage.mkdir()
     (stage/'instance.xml').write_bytes(instance_bytes)
-    write_json(stage/'config.json',dict(**spec,hc_base=10000,do_proposals=100,luby_index_start=1,
-        seconds=args.seconds,restart=False))
+    write_json(stage/'config.json',dict(**spec,hc_base=10000,do_proposals=args.do_budget,luby_index_start=1,
+        seconds=args.seconds,do_budget=args.do_budget,restart=False))
     bridge=None;phases=Journal(stage/'phases.csv');dolog=Journal(stage/'do_proposals.csv')
     checks=Journal(stage/'checkpoints.csv');status='failed';error=None;result={}
     try:
@@ -143,7 +143,7 @@ def run_worker(spec,out,controller,args,model,blocks,fullidx,scale,instance_byte
             if controller.stopped():raise InterruptedError('manual stop')
             if time.monotonic()-started>=args.seconds or df==0:break
             before,start_nfe=df,nfe;tic=time.monotonic()
-            for step in range(1,101):
+            for step in range(1,args.do_budget+1):
                 if time.monotonic()-started>=args.seconds or df==0:break
                 patch,noise_l2=propose(model,choices,fullidx,blocks,scale,rng)
                 fields=bridge.send('PATCH',cycle,step,patch).split('\t')
@@ -218,12 +218,13 @@ def main():
     parser.add_argument('--workers',type=int,default=12)
     parser.add_argument('--rounds',type=int,default=2)
     parser.add_argument('--seconds',type=float,default=14400)
+    parser.add_argument('--do-budget',type=int,default=100)
     parser.add_argument('--heap-mb',type=int,default=512)
     parser.add_argument('--output',type=Path)
     parser.add_argument('--stop',action='store_true')
     args=parser.parse_args()
     if args.stop:return stop_request()
-    if min(args.workers,args.rounds,args.seconds,args.heap_mb)<=0:parser.error('Positive budgets required')
+    if min(args.workers,args.rounds,args.seconds,args.heap_mb,args.do_budget)<=0:parser.error('Positive budgets required')
     global np,torch
     import numpy as np
     import torch
@@ -280,7 +281,7 @@ def main():
                 target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,target)
         shutil.copytree(modeldir,out/'model_snapshot')
         config=dict(workers=args.workers,rounds=args.rounds,seconds_per_task=args.seconds,
-            nominal_search_hours=args.rounds*args.seconds/3600,hc_base=10000,do_budget=100,
+            nominal_search_hours=args.rounds*args.seconds/3600,hc_base=10000,do_budget=args.do_budget,
             sigma=.75,coordinates=512,block_budget=2,luby_index_start=1,restart=False,
             manual_stop='discard active solution XMLs, preserve completed solutions and interrupted logs',
             instance_sha256=sha(INSTANCE),model_sha256=sha(modeldir/'model.pt'),

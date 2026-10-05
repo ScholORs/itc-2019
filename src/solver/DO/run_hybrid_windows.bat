@@ -2,9 +2,9 @@
 setlocal
 cd /d "%~dp0"
 if defined DO_PYTHON (
-    "%DO_PYTHON%" hybrid_collect.py %*
+    "%DO_PYTHON%" hybrid_collect.py --workers 12 --rounds 1 --seconds 14400 --do-budget 50 %*
 ) else (
-    python hybrid_collect.py %*
+    python hybrid_collect.py --workers 12 --rounds 1 --seconds 14400 --do-budget 50 %*
 )
 set "RESULT=%errorlevel%"
 echo.

@@ -1,5 +1,11 @@
 # Windows overnight HC + DO experiment
 
+Current run_hybrid_windows.bat preset: **12 parallel independent seeds, one round,
+4h per task, 10000×Luby HC→50 DO**. The launcher supplies `--workers 12 --rounds 1
+--seconds 14400 --do-budget 50`; config.json records these actual values. The older
+two-round/100DO protocol below describes the original Python defaults, not the
+current launcher preset. Stop behavior remains discard-active/retain-completed.
+
 Algorithm: `10,000 * luby(cycle)` HC candidate evaluations, followed by 100
 consecutive DO candidates. Luby starts at1: 1,1,2,1,1,2,4,...; each task starts its
 own sequence. Keep the current solution and RNG state throughout; no restart,
