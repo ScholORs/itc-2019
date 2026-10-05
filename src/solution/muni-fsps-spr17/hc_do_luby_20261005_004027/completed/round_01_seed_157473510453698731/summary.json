@@ -1,0 +1,44 @@
+{
+  "round": 1,
+  "slot": 10,
+  "seed": 157473510453698731,
+  "noise_seed": 1332757770267347486,
+  "status": "completed",
+  "initial_df": 237,
+  "final_df": 2,
+  "nfe": 4864533,
+  "hc_nfe": 4850000,
+  "do_nfe": 14532,
+  "do_effective": 445,
+  "do_improvements": 0,
+  "cycles": 146,
+  "elapsed_seconds": 14400.483999999939,
+  "final_distance_blocks": 476,
+  "verified": true,
+  "timing": "search includes inference/HC/DF/logging/checkpoint saves; excludes JVM startup and initial save",
+  "hc_seconds": 1560.0149999995483,
+  "do_seconds": 12840.098000000231,
+  "first_hits": {
+    "10": {
+      "nfe": 18875,
+      "seconds": 106.3032194,
+      "phase": "hc"
+    },
+    "5": {
+      "nfe": 30163,
+      "seconds": 204.7046831,
+      "phase": "hc"
+    },
+    "3": {
+      "nfe": 40461,
+      "seconds": 304.4643582,
+      "phase": "hc"
+    },
+    "2": {
+      "nfe": 353151,
+      "seconds": 1679.6318804,
+      "phase": "hc"
+    }
+  },
+  "first_hit_clock": "Java clock from RANDOM, includes initial random generation/save"
+}
