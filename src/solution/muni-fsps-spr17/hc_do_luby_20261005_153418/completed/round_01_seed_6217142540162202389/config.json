@@ -1,0 +1,12 @@
+{
+  "round": 1,
+  "slot": 4,
+  "seed": 6217142540162202389,
+  "noise_seed": 2655103529514653268,
+  "hc_base": 10000,
+  "do_proposals": 50,
+  "luby_index_start": 1,
+  "seconds": 14400.0,
+  "do_budget": 50,
+  "restart": false
+}
